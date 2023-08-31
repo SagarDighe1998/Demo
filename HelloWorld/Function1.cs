@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 public static class HelloWorldFunction
 {
-    [FunctionName("GreetFunction")] public static async Task<IActionResult> 
+    [FunctionName("GreetFunction"  )] public static async Task<IActionResult> 
         Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] 
     HttpRequest req, ILogger log) { log.LogInformation("C# HTTP trigger function processed a request.");
         string name = req.Query["name"];
-        string responseMessage = string.IsNullOrEmpty(name) ? "Please provide a name in the query string." : $"Hello, {name}!";
+        string responseMessage = string.IsNullOrEmpty(name) ? "Please1 provide a name in the query string." : $"Hello, {name}!";
         return new OkObjectResult(responseMessage); }
 }
 
